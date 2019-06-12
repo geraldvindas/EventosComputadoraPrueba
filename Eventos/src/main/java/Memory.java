@@ -27,7 +27,7 @@ public class Memory {
         // values = Observable.just(message);
         values = Observable.just(message);
         // Creo evento
-        this.eventManager.addEvent(new Event(2, "Busco dato", this.eventManager.totalTime + 3));
+        this.eventManager.addEvent(new Event(2, "Busco dato", this.eventManager.totalTime + 3, values, message));
     }
 
 

@@ -12,14 +12,20 @@ public class Bus {
         this.factory = factory;
         this.eventManager = this.factory.getEventManager();
         this.cpu = this.factory.getCPU();
+
+        Disposable subscription = this.memory.values.subscribe(
+                v -> System.out.println("Received in constructor: " + v),
+                e -> System.out.println("Error: " + e),
+                () -> System.out.println("Completed")
+        );
     }
 
     public void getDatoMem() {
-
-
+        
         // Creo evento
-        this.eventManager.addEvent(new Event(2, "Pido a memoria", this.eventManager.totalTime + 2));
+        // this.eventManager.addEvent(new Event(2, "Pido a memoria", this.eventManager.totalTime + 2));
         this.memory.getDato();
+
 
         Disposable subscription = this.memory.values.subscribe(
                 v -> System.out.println("Received in Bus: " + v),

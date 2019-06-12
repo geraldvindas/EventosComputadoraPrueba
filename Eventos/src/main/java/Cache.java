@@ -13,7 +13,7 @@ public class Cache {
 
     public void getData() {
         // Creo evento
-        this.eventManager.addEvent(new Event(2, "Pido a bus", this.eventManager.totalTime + 2));
+        // this.eventManager.addEvent(new Event(2, "Pido a bus", this.eventManager.totalTime + 2));
 
         bus.getDatoMem();
     }
