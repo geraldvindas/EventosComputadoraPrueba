@@ -5,13 +5,13 @@ import rx.subjects.PublishSubject;
 import rx.subjects.SerializedSubject;
 import rx.subjects.Subject;
 
-public class RxBus {
+public class ReactiveBus {
 
-    private static final RxBus INSTANCE = new RxBus();
+    private static final ReactiveBus INSTANCE = new ReactiveBus();
 
     private final Subject<Object, Object> mBusSubject = new SerializedSubject<>(PublishSubject.create());
 
-    public static RxBus getInstance() {
+    public static ReactiveBus getInstance() {
         return INSTANCE;
     }
 
