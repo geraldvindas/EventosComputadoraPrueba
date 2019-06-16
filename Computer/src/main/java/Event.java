@@ -1,5 +1,4 @@
-import io.reactivex.Observable;
-import io.reactivex.internal.operators.observable.ObservableAny;
+import rx.Observable;
 
 public class Event implements Comparable<Event>{
     int eventTime;
@@ -8,7 +7,7 @@ public class Event implements Comparable<Event>{
     Observable observable;
     String value;
 
-    public Event(int eventTime, String eventName, int executionTime, Observable observable, String value) {
+    public Event(int eventTime, String eventName, int executionTime, Observable<String> observable, String value) {
         this.eventTime = eventTime;
         this.eventName = eventName;
         this.executionTime = executionTime;
@@ -28,7 +27,7 @@ public class Event implements Comparable<Event>{
     }
 
     public void execute() {
-        this.observable.just(value);
+        RxBus.getInstance().post(this);
     }
 
 }

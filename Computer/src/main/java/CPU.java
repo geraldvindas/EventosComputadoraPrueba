@@ -10,7 +10,10 @@ public class CPU {
     }
 
     public void incrementClock(){
+        // Ejecutar instruccion
+        // mientras haya un evento
         for (int i = 0; i < MAX_TIME; i++) {
+            // Ejecutar la siguiente instruccion
             this.eventManager.executeEvent(i);
         }
     }
